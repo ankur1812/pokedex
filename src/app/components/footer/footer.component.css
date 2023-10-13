@@ -1,0 +1,8 @@
+footer {
+    background: #ED3739;
+    color: white;
+    width: 100%;
+
+    min-height: 40px; 
+    /* When changing min-height, updade app.component.css accordingly..! */
+}

@@ -1,0 +1,15 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #ED3739;
+    color: white;
+    width: 100%;
+ 
+    min-height: 65px;
+    /* When changing min-height, updade app.component.css accordingly..! */
+}
+
+h2 {
+    margin: 0px;
+}
