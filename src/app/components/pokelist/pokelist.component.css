@@ -3,3 +3,6 @@
     overflow-y: scroll;
     height: 100%;
 }
+.btn-next {
+    margin-bottom: 16px;
+}

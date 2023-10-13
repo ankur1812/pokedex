@@ -7,8 +7,12 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./pokelist.component.css']
 })
 export class PokelistComponent implements OnInit {
-  pokemons: any = -1;
+  pokemons: any = [];
+  loading: boolean = false;
+  start: number = 0;
+  limit: number = 25;
   total: number = 0;
+  containerRef: any = null;
 
 
   constructor(public apiService: ApiService) { }
@@ -16,12 +20,27 @@ export class PokelistComponent implements OnInit {
   
   ngOnInit() {
     this.fetchData();
+    // setTimeout( () => {
+    //   this.containerRef = document.getElementById('pokelist')
+    //   this.containerRef.addEventListener('scroll', this.loadMoreOnScrollEnd)
+    // }, 1000)
   }
 
   fetchData() {
-    return this.apiService.getPokemon(25).subscribe((data: any) => {
+    this.loading = true;
+    return this.apiService.getPokemon(this.limit, this.start).subscribe((data: any) => {
+      this.loading = false;
       this.total = data.count;
-      this.pokemons = data.results;
+      this.pokemons = [...this.pokemons, ...data.results];
     })    
-  }  
+  }
+  
+  loadNext() {
+    this.start += this.limit;
+    this.fetchData()
+  }
+
+  // TODO: Implement AutoLoad
+  // loadMoreOnScrollEnd(e:any) {  }
+
 }

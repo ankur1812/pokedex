@@ -1,10 +1,11 @@
 <!-- <p> API Value is : {{apiValue == -1 ? 'Loading...' : apiValue[0].id }}</p> -->
-<div class="pokelist">
+<div class="pokelist" id="pokelist">
     <h2>Pokemon</h2>
     <ul>
         <li *ngFor="let pokemon of pokemons;">
             <poke-accordion [pokemon]="pokemon"></poke-accordion>
         </li>
-    </ul>    
+    </ul>
+    <button *ngIf="pokemons.length" class="primary w-full btn-next" [ngClass]="loading? 'faded': ''" (click)="loadNext()">Load More</button>
 </div>
 

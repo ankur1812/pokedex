@@ -7,14 +7,18 @@ body {
     width: 100%;
 }
 
-ul {
-    padding: 0px;
+button.primary {
+    background: #ED3739;
+    color: white;
+    padding: 8px 16px;
+    /* border-radius: 16px; */
+    border: none;
 }
 
-ul li {
-    list-style-type: none;
-}
+ul { padding: 0px; }
 
-.capitalize {
-    text-transform: capitalize;
-}
+ul li { list-style-type: none; }
+
+.capitalize { text-transform: capitalize; }
+.faded { opacity: 0.5; }
+.w-full { width: 100%; }
