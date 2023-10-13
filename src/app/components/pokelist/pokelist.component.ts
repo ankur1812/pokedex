@@ -7,7 +7,7 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./pokelist.component.css']
 })
 export class PokelistComponent implements OnInit {
-  apiValue: any = -1;
+  pokemons: any = -1;
   total: number = 0;
 
 
@@ -19,9 +19,9 @@ export class PokelistComponent implements OnInit {
   }
 
   fetchData() {
-    return this.apiService.getPokemon().subscribe((data: any) => {
+    return this.apiService.getPokemon(25).subscribe((data: any) => {
       this.total = data.count;
-      this.apiValue = data.results;
+      this.pokemons = data.results;
     })    
   }  
 }

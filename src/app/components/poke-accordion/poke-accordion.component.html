@@ -1,0 +1,12 @@
+<div class="accordion">
+    <button class="acc-btn" (click)="expand()">
+        <span>
+            <img src="{{iconSrc}}" height="16" width="16"/>
+            <span class="capitalize"> {{pokemon?.name}} </span>    
+        </span>
+        <span> {{ expanded ? '-' : '+'}} </span>
+    </button>
+    <div class="expanded" *ngIf="expanded">
+        <pre> {{ jsonInfo }} </pre>
+    </div>
+</div>

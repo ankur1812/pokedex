@@ -6,3 +6,15 @@ body {
     min-height: 100vh;
     width: 100%;
 }
+
+ul {
+    padding: 0px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
