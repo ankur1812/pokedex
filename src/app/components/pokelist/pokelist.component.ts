@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from '../../crud.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-pokelist',
@@ -11,7 +11,7 @@ export class PokelistComponent implements OnInit {
   total: number = 0;
 
 
-  constructor(public crudService: CrudService) { }
+  constructor(public apiService: ApiService) { }
 
   
   ngOnInit() {
@@ -19,7 +19,7 @@ export class PokelistComponent implements OnInit {
   }
 
   fetchData() {
-    return this.crudService.getPokemon().subscribe((data: any) => {
+    return this.apiService.getPokemon().subscribe((data: any) => {
       this.total = data.count;
       this.apiValue = data.results;
     })    

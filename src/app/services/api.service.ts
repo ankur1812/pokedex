@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 
-export class CrudService {
+export class ApiService {
 
   pokeApiOrigin = 'https://pokeapi.co/api/v2';
 
