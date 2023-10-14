@@ -1,22 +1,29 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'poke-accordion',
   templateUrl: './poke-accordion.component.html',
   styleUrls: ['./poke-accordion.component.css']
 })
-export class PokeAccordionComponent implements OnChanges {
+export class PokeAccordionComponent {
   @Input() pokemon:any = null;
   iconSrc: string = 'https://p7.hiclipart.com/preview/321/301/314/poke-ball-pokemon-go-computer-icons-pokemon-go-thumbnail.jpg'
   expanded: boolean = false;
   jsonInfo: string = '';
+  details: any = null;
+  // loading: boolean = false;
 
-  ngOnChanges() {
-    this.jsonInfo = JSON.stringify(this.pokemon)
-  }
+  constructor(public apiService: ApiService) { }
 
   expand() {
     this.expanded = !this.expanded;
+    // this.loading = true;
+    return this.apiService.getMoreDtails(this.pokemon.url).subscribe((data: any) => {
+      // this.loading = false;
+      this.details = data;
+    })    
+
   }
 
 }

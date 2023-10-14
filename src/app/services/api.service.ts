@@ -26,4 +26,9 @@ export class ApiService {
     //   catchError( (error: any) => throwError("Error"))
     // )
   }
+
+  getMoreDtails(fetchUrl: string): Observable<any> {
+    return this.httpClient.get<any>(fetchUrl)
+  }
+
 }

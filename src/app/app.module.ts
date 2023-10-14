@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PokeAccordionComponent } from './components/poke-accordion/poke-accordion.component';
+import { PokeDetailsComponent } from './components/poke-details/poke-details.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { PokeAccordionComponent } from './components/poke-accordion/poke-accordi
     FooterComponent,
     SidebarComponent,
     PokeAccordionComponent,
+    PokeDetailsComponent,
   ],
   imports: [
     BrowserModule,

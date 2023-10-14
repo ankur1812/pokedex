@@ -1,0 +1,14 @@
+.poke-details {max-height: 100%;}
+img {
+    height: 128px;
+    width: 128px;
+}
+
+table {
+    width: 60%;
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid #ED3739;
+}
+
+table tr { border-bottom: 1px solid lightcoral;}

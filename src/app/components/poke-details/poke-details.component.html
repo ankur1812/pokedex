@@ -1,0 +1,33 @@
+<div class="poke-details flex flex-column items-center justify-center">
+    <img src="{{pokemon?.sprites?.front_default}}" height="64" width="64"/>
+    <table class="capitalize">
+        <tr>
+            <th> # {{pokemon.id}} </th>
+            <th> {{pokemon.name}} </th>
+        </tr>
+        <!-- <tr><td colspan="2"> <img src="{{pokemon?.sprites?.front_default}}" height="64" width="64"/></td></tr> -->
+        <tr> <th> Type </th> <td>
+            <span *ngFor="let data of pokemon.types">
+                {{ data.type.name }}
+            </span>
+        </td> </tr>
+        <tr> <th> Height </th> <td> {{pokemon.height}} </td> </tr>
+        <tr> <th> Weight </th> <td> {{pokemon.weight}} </td> </tr>
+        <tr>
+            <th>Abilities</th>
+            <td> 
+                <span *ngFor="let data of pokemon.abilities">
+                    {{ data.ability.name }}
+                </span>
+            </td>
+        </tr>
+        <!-- <tr>
+            <th>Stats</th>
+            <td> 
+                <div *ngFor="let data of pokemon.stats" class="capitalize">
+                    {{ data.stat.name }}: {{ data.base_stat}}
+                </div>
+            </td>
+        </tr> -->
+    </table>
+</div>

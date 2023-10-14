@@ -22,3 +22,7 @@ ul li { list-style-type: none; }
 .capitalize { text-transform: capitalize; }
 .faded { opacity: 0.5; }
 .w-full { width: 100%; }
+.flex { display: flex; }
+.items-center { align-items: center;}
+.justify-center { justify-content: center; }
+.flex-column { flex-direction: column; }
