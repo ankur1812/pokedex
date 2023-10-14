@@ -2,7 +2,10 @@
 <div class="sidebar">
     <h3>Select regions here</h3>
     <ul>
-        <li>Kanto</li>
-        <li>Johto</li>
+        <li *ngFor="let gen of generations, index as i">
+            <button (click)="switchGeneration(i)">
+                Generation {{ genNames[i] }}
+            </button>
+        </li>
     </ul>
 </div>

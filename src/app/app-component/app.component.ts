@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokedex';
+  start = 0;
+  end = 151;
+
+  updateIndices(info:any) {
+    this.start = info.start;
+    this.end = info.end;
+  }
 }
