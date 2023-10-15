@@ -2,11 +2,11 @@
     <button class="acc-btn" (click)="expand()">
         <span>
             <img src="{{iconSrc}}" height="16" width="16"/>
-            <span class="capitalize"> #{{id}} {{pokemon?.name}} </span>    
+            <span class="capitalize"> {{label}} </span>    
         </span>
         <span> {{ expanded ? '-' : '+'}} </span>
     </button>
     <div class="expanded" *ngIf="expanded">
-        <poke-details [pokemon]="details"></poke-details>
+        <ng-content></ng-content>
     </div>
 </div>

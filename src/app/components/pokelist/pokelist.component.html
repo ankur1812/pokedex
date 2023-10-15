@@ -2,10 +2,14 @@
     <h2>Pokemon</h2>
     <ul>
         <li *ngFor="let foundPokemon of foundPokemons">
-            <poke-accordion [pokemon]="foundPokemon"></poke-accordion>
+            <poke-accordion [label]="getLabel(foundPokemon)">
+                <poke-details [data]="foundPokemon"></poke-details>
+            </poke-accordion>
         </li>
         <li *ngFor="let pokemon of pokemons;">
-            <poke-accordion [pokemon]="pokemon"></poke-accordion>
+            <poke-accordion [label]="getLabel(pokemon)">
+                <poke-details [data]="pokemon"></poke-details>
+            </poke-accordion>
         </li>
     </ul>
 </div>

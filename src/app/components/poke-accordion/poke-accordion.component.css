@@ -11,11 +11,18 @@
 }
 .expanded {
     /* display: none; */
-    /* height: 200px; */
-    /* animation: animate-in 0.5s ease-in-out; */
+    max-height: 300px;
+    overflow: hidden;
+    animation: animate-in .4s ease-in-out;
 }
 
 @keyframes animate-in {
     from {display: block; max-height: 0px; }
-    to {display: block; max-height: 200px; }
+    to {display: block; max-height: 300px; }
 }
+
+/* @keyframes animate-out {
+    from {max-height: 300px; }
+    to {max-height: 0px; }
+    
+} */
