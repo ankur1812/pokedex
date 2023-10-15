@@ -5,10 +5,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Info
 
 Core components: AppComponent, Header, Footer, Sidebar
-Poke Components: PokeList, PokeAccordion, PokeSearch
+Poke Components: PokeList, PokeAccordion, PokeSearch, PokeDetails
 
 TODO:
-Implement search-bar, add fonts, improve UX, add TS interfaces, fix animation, improve search api call
+TS interfaces, improve search api call
 
 ## Development server
 
