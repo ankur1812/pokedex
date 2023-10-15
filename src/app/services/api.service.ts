@@ -20,7 +20,7 @@ export class ApiService {
   }
 
   getPokemon(limit = 10, start = 0): Observable<any> {
-    return this.httpClient.get<any>(`${this.pokeApiOrigin}/pokemon?limit=${limit}&offset=${start}'`)
+    return this.httpClient.get<any>(`${this.pokeApiOrigin}/pokemon?limit=${limit}&offset=${start}`)
     // .pipe(
     //   retry(1),
     //   catchError( (error: any) => throwError("Error"))

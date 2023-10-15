@@ -3,7 +3,7 @@
   <div class="main-screen">
     <div class="contents">
       <app-sidebar (genChange)="updateIndices($event)" class="sidebar"></app-sidebar>
-      <app-pokelist class="pokelist" [offset]="start" [limit]="end" [foundPokemons]="foundPokemons"></app-pokelist>
+      <app-pokelist class="pokelist" [start]="start" [end]="end" [foundPokemons]="foundPokemons"></app-pokelist>
     </div>
     <app-footer></app-footer>  
   </div>

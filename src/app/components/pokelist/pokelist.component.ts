@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -7,32 +7,43 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./pokelist.component.css']
 })
 export class PokelistComponent implements OnChanges {
-  @Input() offset: number = 0;
-  @Input() limit: number = 151;
+  @Input() start: number = 0;
+  @Input() end: number = 151;
   @Input() foundPokemons: any = [];
   pokemons: any = [];
   loading: boolean = false;
   total: number = 0;
-  containerRef: any = null;
+  startIndex: number = 0;
+  pageSize = 25;
 
 
   constructor(public apiService: ApiService) { }
   
-  ngOnChanges() {
-    this.fetchData();
+  ngOnChanges(change: SimpleChanges) {
+    this.startIndex = this.start;
+    this.pokemons = [];
+    this.fetchData(this.pageSize, this.startIndex);
   }
 
-  fetchData() {
+  fetchData(limit:number, start:number) {
     this.loading = true;
-    this.apiService.getPokemon(this.limit, this.offset).subscribe((data: any) => {
+    this.apiService.getPokemon(limit, start).subscribe((data: any) => {
       this.loading = false;
       this.total = data.count;
-      this.pokemons = [...data.results];
+      this.pokemons = [...this.pokemons, ...data.results];
     })    
   }
 
+  
   getLabel(pokemon: any) {
     return `#${pokemon.url.split('/pokemon/')[1].split('/')[0]} ${pokemon.name.toUpperCase()[0]}${pokemon.name.slice(1, pokemon.name.length)}`
   }
   
+  loadMore() {
+    this.startIndex += this.pageSize;
+    if (this.startIndex + this.pageSize >= this.end - this.start ) {
+      this.fetchData(this.end - this.startIndex, this.startIndex);
+    }
+    else this.fetchData(this.pageSize, this.startIndex);
+  }
 }

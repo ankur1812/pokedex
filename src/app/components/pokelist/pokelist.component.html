@@ -18,5 +18,6 @@
             </poke-accordion>
         </li>
     </ul>
+    <button class="btn-next" *ngIf="pokemons.length && pokemons.length < end - start" (click)="loadMore()">Load more</button>
 </div>
 
