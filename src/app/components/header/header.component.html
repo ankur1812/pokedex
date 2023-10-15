@@ -1,4 +1,19 @@
-<div class="header flex ">
-    <h2>My Pokedex</h2>
+<div class="header">
+    <!-- <h2>My Pokedex</h2> -->
+    <!-- <div class="circle"></div> -->
+    <div class="flex">
+        <div class="light-container">
+            <div class="light"><span class="shadow"></span></div>
+        </div>
+        <div class="led-container small">
+            <div class="light light-red"><span class="shadow"></span></div>
+        </div>
+        <div class="led-container small">
+            <div class="light light-yellow"><span class="shadow"></span></div>
+        </div>
+        <div class="led-container small">
+            <div class="light light-green"><span class="shadow"></span></div>
+        </div>    
+    </div>
     <poke-search (pokemonsFound)="sendResults($event)"></poke-search>
 </div>
