@@ -10,8 +10,11 @@
 }
 
 .sidebar {
-    background: lightcoral;
+    background: #ED3739;
     width: 240px;
+    @media only screen and (max-width: 600px) {
+        width: 140px;
+    }
 }
 
 .pokelist {

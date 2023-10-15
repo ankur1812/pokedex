@@ -9,6 +9,10 @@ table {
     padding: 8px;
     margin: 8px;
     border: 1px solid #ED3739;
+
+    @media only screen and (max-width: 600px) {
+        width: 90%;
+    }
 }
 
 table tr { border-bottom: 1px solid lightcoral;}
