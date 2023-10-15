@@ -16,11 +16,8 @@ export class PokeSearchComponent {
 
   constructor(public apiService: ApiService) { }
 
-  ngOnInit() {
-    this.fetchData()
-  }
-
   search(e:any) {
+    if(!this.pokemons.length) this.fetchData()
     let searchStr:string = e.target.value; // [(ngModel not working)]
     // if(searchStr.length == 1) this.fetchData()
     if (searchStr.length < 3) {

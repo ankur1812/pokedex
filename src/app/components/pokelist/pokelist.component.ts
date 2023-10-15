@@ -20,9 +20,11 @@ export class PokelistComponent implements OnChanges {
   constructor(public apiService: ApiService) { }
   
   ngOnChanges(change: SimpleChanges) {
-    this.startIndex = this.start;
-    this.pokemons = [];
-    this.fetchData(this.pageSize, this.startIndex);
+    if(change['start']) {
+      this.startIndex = this.start;
+      this.pokemons = [];
+      this.fetchData(this.pageSize, this.startIndex)
+    };
   }
 
   fetchData(limit:number, start:number) {
