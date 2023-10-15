@@ -24,14 +24,14 @@ export class PokeSearchComponent {
     let searchStr:string = e.target.value; // [(ngModel not working)]
     // if(searchStr.length == 1) this.fetchData()
     if (searchStr.length < 3) {
-      this.pokemonsFound.emit([]);
+      !searchStr.length && this.pokemonsFound.emit([]);  
       return;
     }
-    debugger;
     let results = this.pokemons.filter( (pokemon: any) => (
       pokemon.name.includes(searchStr.toLowerCase()) || pokemon.url.split('/pokemon/')[1].split('/')[0] == searchStr
      ))
     if(results.length) this.pokemonsFound.emit(results);
+    else this.pokemonsFound.emit([]);
   }
   
   fetchData() {

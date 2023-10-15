@@ -1,0 +1,14 @@
+.search-container {
+    padding: 12px 8px;
+}
+
+input {
+    border: none;
+    padding: 8px 12px;
+}
+
+::placeholder {
+    color: #ED3739;
+    opacity: 0.5;
+  }
+  
