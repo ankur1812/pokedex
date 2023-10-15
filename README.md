@@ -8,7 +8,7 @@ Core components: AppComponent, Header, Footer, Sidebar
 Poke Components: PokeList, PokeAccordion, PokeSearch
 
 TODO:
-Implement search-bar, add fonts, improve UX, add TS interfaces, fix animation
+Implement search-bar, add fonts, improve UX, add TS interfaces, fix animation, improve search api call
 
 ## Development server
 

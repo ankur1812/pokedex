@@ -9,6 +9,7 @@ import { ApiService } from '../../services/api.service';
 export class PokelistComponent implements OnChanges {
   @Input() offset: number = 0;
   @Input() limit: number = 151;
+  @Input() foundPokemons: any = [];
   pokemons: any = [];
   loading: boolean = false;
   total: number = 0;
