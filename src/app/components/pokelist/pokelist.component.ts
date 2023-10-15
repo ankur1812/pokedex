@@ -38,7 +38,8 @@ export class PokelistComponent implements OnChanges {
 
   
   getLabel(pokemon: any) {
-    return `#${pokemon.url.split('/pokemon/')[1].split('/')[0]} ${pokemon.name.toUpperCase()[0]}${pokemon.name.slice(1, pokemon.name.length)}`
+    return `${pokemon.name.toUpperCase()[0]}${pokemon.name.slice(1, pokemon.name.length)}`
+    // return `#${pokemon.url.split('/pokemon/')[1].split('/')[0]} ${pokemon.name.toUpperCase()[0]}${pokemon.name.slice(1, pokemon.name.length)}`
   }
   
   loadMore() {

@@ -1,5 +1,5 @@
 <div class="accordion">
-    <button class="acc-btn" (click)="expand()">
+    <button class="acc-btn" (click)="expand()" [ngClass]="expanded? 'active' : ''">
         <span>
             <img src="{{iconSrc}}" height="16" width="16"/>
             <span class="capitalize"> {{label}} </span>    

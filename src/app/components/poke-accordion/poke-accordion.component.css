@@ -15,6 +15,10 @@
     overflow: hidden;
     animation: animate-in .4s ease-in-out;
 }
+.acc-btn.active {
+    background: #ED3739;
+    color: white;
+}
 
 @keyframes animate-in {
     from {display: block; max-height: 0px; }
