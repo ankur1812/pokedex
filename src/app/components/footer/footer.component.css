@@ -6,3 +6,15 @@ footer {
     min-height: 40px; 
     /* When changing min-height, updade app.component.css accordingly..! */
 }
+
+.footer-contents {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 16px;    
+}
+
+.footer-contents a {
+    color: white;
+}
