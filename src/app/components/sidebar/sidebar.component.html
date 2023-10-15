@@ -1,10 +1,11 @@
 <!-- <p>sidebar works!</p> -->
 <div class="sidebar">
-    <h3>Select regions here</h3>
+    <h3>Generations</h3>
+    <!-- <img src="/assets/poke-logo.png"/> -->
     <ul>
         <li *ngFor="let gen of generations, index as i">
-            <button (click)="switchGeneration(i)">
-                Generation {{ genNames[i] }}
+            <button (click)="switchGeneration(i)" [ngClass]="currentGenIndex == i ? 'active' : ''">
+                <span> {{ genNames[i] }} </span>
             </button>
         </li>
     </ul>

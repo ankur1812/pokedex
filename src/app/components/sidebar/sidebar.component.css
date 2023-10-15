@@ -1,6 +1,49 @@
+/* img {
+    height: 80px;
+    aspect-ratio: auto;
+} */
+
+h3 {padding: 0 8px;}
+
+ul {margin-top: 0px;}
+
 button {
     text-align: left;
     width: 100%;
     background: inherit;
     border: none;
+    cursor: pointer;
+}
+button:hover span {
+    font-weight: 600;
+}
+
+button.active {
+    font-weight: 700;
+    outline: 2px solid transparent; outline-offset: 2px;
+}
+
+button:active, button:focus  {
+    border:none;
+    outline: none;
+    outline: 2px solid transparent; outline-offset: 2px;
+}
+
+
+span {
+    padding: 8px 12px;
+    /* color: white; */
+}
+span:before {
+    content:"Generation ";
+}
+
+@media only screen and (max-width: 600px) {
+    span:before {
+        content:"Gen ";
+    }
+
+    img {
+        height: 50px
+    }
 }
